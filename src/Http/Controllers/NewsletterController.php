@@ -8,7 +8,7 @@ use Illuminate\Routing\Controller;
 use Agpretto\Newsletter\Http\Requests\SubscribeNewsletter;
 use Agpretto\Newsletter\Newsletter;
 
-class NewsletterController extends Controllers
+class NewsletterController extends Controller
 {
     /**
      * Handle newsletter subscription

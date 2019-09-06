@@ -4,6 +4,7 @@ namespace Agpretto\Newsletter;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Route;
+use Agpretto\Newsletter\Console\Commands\NewsletterInstall;
 
 class NewsletterServiceProvider extends ServiceProvider
 {
@@ -14,7 +15,9 @@ class NewsletterServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->commands([
+            NewsletterInstall::class,
+        ]);
     }
 
     /**

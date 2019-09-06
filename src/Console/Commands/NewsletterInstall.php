@@ -38,7 +38,7 @@ class NewsletterInstall extends Command
      */
     public function handle()
     {
-        if (app()->ennvironment('production')) {
+        if (app()->environment('production')) {
             $this->alert('Running in production mode.');
             if ($this->confirm('Proceed installing Agpretto Newsletter?')) {
                 return;
@@ -51,7 +51,7 @@ class NewsletterInstall extends Command
         if ($this->option('template')) {
             $this->callSilent('vendor:publish', [ '--tag' => 'newsletter-views' ]);
         } else {
-            $this->info('You can publish the Newsletter template so you can modify it.')
+            $this->info('You can publish the Newsletter template so you can modify it.');
 
             if ($this->confirm('Publish Newsletter template?')) {
                 $this->comment('Publishing Newsletter template..');
