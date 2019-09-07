@@ -7,6 +7,7 @@ use Illuminate\Routing\Controller;
 
 use Agpretto\Newsletter\Http\Requests\SubscribeNewsletter;
 use Agpretto\Newsletter\Newsletter;
+use Symfony\Component\HttpFoundation\Response;
 
 class NewsletterController extends Controller
 {
@@ -21,7 +22,9 @@ class NewsletterController extends Controller
         $subscription = Newsletter::create($request->all());
 
         if ( $request->wantsJson() ) {
-            return $adv;
+            return response()->json([
+                'message' => 'You have subscribed successfully!'
+            ])->setStatusCode(Response::HTTP_CREATED);
         }
 
         return back();
