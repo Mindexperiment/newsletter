@@ -27,6 +27,6 @@ class NewsletterController extends Controller
             ])->setStatusCode(Response::HTTP_CREATED);
         }
 
-        return back();
+        return back()->flash('message', 'You have subscribed successfully!');
     }
 }
